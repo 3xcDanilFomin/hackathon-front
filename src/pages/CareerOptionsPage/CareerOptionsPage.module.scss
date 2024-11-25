@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  padding: 24px;
+
+  .titile {
+    font-size: 32px;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    .item {
+      padding: 64px 32px;
+      border: 2px solid #000;
+      border-radius: 24px;
+      position: relative;
+      transition: background-color .5s ease-in-out;
+
+      &:hover{
+        background-color: #e9e9e9;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .img {
+          width: 100%;
+          height: 150px;
+          background-color: #ccc;
+        }
+
+        .subtitle {
+          font-size: 24px;
+        }
+      }
+
+      .link {
+        position: absolute;
+        inset: 0;
+      }
+    }
+  }
+}

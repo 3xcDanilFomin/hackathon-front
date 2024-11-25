@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-block: 24px;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    padding-inline: 24px;
+
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .item {
+      position: relative;
+      border: 2px solid black;
+      border-radius: 40px;
+      padding: 32px;
+      transition: background-color .5s ease-in-out;
+
+
+      &:hover{
+        background-color: #e4e4e4;
+      }
+
+      &__wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: space-between;
+      }
+
+      &__title {
+        text-align: center;
+        font-size: 18px;
+      }
+
+      &__link{
+        position: absolute;
+        inset: 0;
+      }
+    }
+  }
+}

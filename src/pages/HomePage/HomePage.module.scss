@@ -1,0 +1,46 @@
+.sct__hello {
+  margin: 100px;
+  max-height: 1080px;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 400px;
+
+  .art__hello {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+
+    .title {
+      font-size: calc(16px * 4.5);
+      height: 50px;
+      width: 700px;
+      text-align: center;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .text__hello {
+      text-align: center;
+      font-size: calc(16px * 2);
+      height: 40px;
+      width: 800px;
+    }
+  }
+
+  .btn__start {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    height: 60px;
+    width: 400px;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: #ccc;
+    border: 1px solid #000;
+    font-size: 32px;
+  }
+}
