@@ -1,0 +1,11 @@
+.subtitle {
+  margin: 0;
+  font-size: 32px;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    & {
+      font-size: clamp(1rem, 0.046rem + 4.07vw, 2rem);
+    }
+  }
+}

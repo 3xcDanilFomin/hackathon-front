@@ -1,16 +1,21 @@
 import { Link } from "react-router-dom";
+
+import { Button } from "../../components/UI";
 import styles from "./HomePage.module.scss";
 
 export const HomePage: React.FC = () => {
   return (
-    <section className={styles["sct__hello"]}>
-      <article className={styles["art__hello"]}>
-        <h1 className={styles["title"]}>Добро пожаловать!</h1>
-        <p className={styles["text__hello"]}>
-          Пройдите тест, чтобы узнать к чему у вас есть предположенность
-        </p>
-        <Link to="/direction" className={styles["btn__start"]}>Начать</Link>
-      </article>
+    <section className={styles["section"]}>
+      <h1 className={styles["title"]}>Добро пожаловать!</h1>
+      <p className={styles["subtitle"]}>
+        Пройдите тест, чтобы узнать к чему
+        <br /> у вас есть предрасположенность
+      </p>
+      <Link to="/professions">
+        <Button variant="default" size="lg">
+          Начать
+        </Button>
+      </Link>
     </section>
   );
 };

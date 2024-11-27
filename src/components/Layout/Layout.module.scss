@@ -1,0 +1,12 @@
+@use "../../styles/utils/variables.scss" as *;
+
+.layout {
+  max-width: 1288px;
+  padding-inline: 24px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $gap-xl;
+}

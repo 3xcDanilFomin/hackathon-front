@@ -1,23 +1,24 @@
-import { Link } from "react-router-dom";
-
+import { Header, QuestionsList } from "../../components";
+import { Subtitle } from "../../components/UI";
+import { questions } from "../../data/questions";
+import { useQuestions } from "../../hooks";
 import style from "./CareerOptionsPage.module.scss";
 
 export const CareerOptionsPage: React.FC = () => {
+  const { displayedQuestions, questionIndex, handleQuestionClick } =
+    useQuestions(questions);
+
+  console.log({ displayedQuestions, questionIndex });
   return (
-    <section className={style["container"]}>
-      <h1 className={style["title"]}>Чем бы вы хотели заниматься?</h1>
-      <ul className={style["list"]}>
-        {new Array(2).fill(0).map((_, index) => (
-          <li className={style["item"]} key={index}>
-            <article className={style["wrapper"]}>
-              {/* <img src="" alt="" /> */}
-              <div className={style["img"]} />
-              <h2 className={style["subtitle"]}>Название одного направления</h2>
-            </article>
-            <Link className={style["link"]} to="/result" />
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <Header counter={questionIndex} total={questions.length / 2} />
+      <section className={style["container"]}>
+        <Subtitle>Выберите вариант, который для вас ближе</Subtitle>
+        <QuestionsList
+          currentQuestions={displayedQuestions.questionsToDisplay}
+          handleQuestionClick={handleQuestionClick}
+        />
+      </section>
+    </>
   );
 };

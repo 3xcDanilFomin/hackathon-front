@@ -2,26 +2,33 @@ import { createBrowserRouter } from "react-router-dom";
 
 import {
   CareerOptionsPage,
-  DirectionPage,
+  TypesProfessionsPage,
   HomePage,
   ResultPage,
 } from "../pages";
+import { Layout } from "../components/Layout/Layout";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/direction",
-    element: <DirectionPage />,
-  },
-  {
-    path: "/career",
-    element: <CareerOptionsPage />,
-  },
-  {
-    path: "/result",
-    element: <ResultPage />,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/professions",
+        element: <TypesProfessionsPage />,
+      },
+      {
+        path: "/career",
+        element: <CareerOptionsPage />,
+      },
+      {
+        path: "/result",
+        element: <ResultPage />,
+      },
+    ],
   },
 ]);

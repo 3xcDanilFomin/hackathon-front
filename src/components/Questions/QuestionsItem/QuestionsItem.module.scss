@@ -1,0 +1,51 @@
+@use "../../../styles/utils/variables.scss" as *;
+
+.item {
+  position: relative;
+  min-width: 320px;
+  height: 440px;
+  background-color: $card-bg;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: $radius-lg;
+  cursor: pointer;
+
+  .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(
+      90deg,
+      $bg-body 0%,
+      rgba($bg-body, 0.7) 50%,
+      $bg-body 100%
+    );
+    border-radius: $radius-lg;
+    overflow: hidden;
+    transition: transform $animation;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-35px);
+      }
+    }
+
+    .img {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .question {
+      font-size: 18px;
+      padding-bottom: 24px;
+    }
+  }
+}

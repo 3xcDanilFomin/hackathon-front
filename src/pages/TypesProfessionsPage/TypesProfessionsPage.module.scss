@@ -1,0 +1,55 @@
+@use "../../styles/utils/variables.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xl;
+  padding-block: 24px;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap-lg;
+
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $gap-lg;
+      padding: 0;
+      list-style-type: none;
+
+      @media screen and (max-width: 1140px) {
+        & {
+          grid-template-columns: repeat(3, 1fr);
+          gap: $gap-md;
+        }
+      }
+
+      @media screen and (max-width: 820px) {
+        & {
+          grid-template-columns: repeat(2, 1fr);
+          gap: $gap-lg;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        & {
+          gap: $gap-md;
+        }
+      }
+      @media screen and (max-width: 560px) {
+        & {
+          grid-template-columns: repeat(1, 1fr);
+          gap: $gap-sm;
+        }
+      }
+    }
+  }
+}

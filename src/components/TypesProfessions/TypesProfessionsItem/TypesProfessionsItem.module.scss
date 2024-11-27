@@ -1,0 +1,60 @@
+@use "../../../styles/utils/variables.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  .img {
+    display: block;
+    width: auto;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+
+    @media screen and (max-width: 1040px) {
+      & {
+        height: 280px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      & {
+        width: clamp(16.25rem, 9.094rem + 30.53vw, 23.75rem);
+        height: auto;
+      }
+    }
+  }
+
+  .text {
+    font-size: 24px;
+    text-align: center;
+    text-wrap: nowrap;
+
+    @media screen and (max-width: 1040px) {
+      & {
+        font-size: 18px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      & {
+        text-wrap: wrap;
+        font-size: clamp(0.875rem, 0.636rem + 1.02vw, 1.125rem);
+      }
+    }
+  }
+}
+
+.description {
+  font-size: 18px;
+  text-align: justify;
+  color: rgba($color: $text-color, $alpha: 0.75);
+
+  @media screen and (max-width: 1040px) {
+    & {
+      font-size: 16px;
+    }
+  }
+}

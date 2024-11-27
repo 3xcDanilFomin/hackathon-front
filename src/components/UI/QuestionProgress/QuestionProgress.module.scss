@@ -1,0 +1,9 @@
+@use "../../../styles/utils/variables.scss" as *;
+
+.progress {
+  font-size: 32px;
+
+  .current {
+    color: rgba($color: $text-color, $alpha: 0.7);
+  }
+}

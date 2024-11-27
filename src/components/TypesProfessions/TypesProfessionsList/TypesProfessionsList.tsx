@@ -1,14 +1,14 @@
-import { DirectinItem } from "../DirectionItem/DirectionItem";
-import styles from "./DirectionList.module.scss";
+import { TypesProfessionsItem } from "../TypesProfessionsItem/TypesProfessionsItem";
+import styles from "./TypesProfessionsList.module.scss";
 
-interface IDirection {
+interface IProfession {
   id: number;
   imgPath: string;
   title: string;
   description: string;
 }
 
-const directions: IDirection[] = [
+const professions: IProfession[] = [
   {
     id: 1,
     title: 'Тип "человек-знаковая система"',
@@ -46,15 +46,15 @@ const directions: IDirection[] = [
   },
 ];
 
-export const DirectinList: React.FC = () => {
+export const TypesProfessionsList: React.FC = () => {
   return (
     <ul className={styles["list"]}>
-      {directions.map((direction) => (
-        <DirectinItem
-          key={direction.id}
-          imgPath={direction.imgPath}
-          title={direction.title}
-          description={direction.description}
+      {professions.map((profession) => (
+        <TypesProfessionsItem
+          key={profession.id}
+          imgPath={profession.imgPath}
+          title={profession.title}
+          description={profession.description}
         />
       ))}
     </ul>
