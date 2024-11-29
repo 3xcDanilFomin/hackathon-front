@@ -6,21 +6,13 @@ import styles from "./ResultPage.module.scss";
 
 export const ResultPage: React.FC = () => {
   const { answerCounts } = useAnswerCount();
-  // const arr = Object.entries(answerCounts);
-  const arr: [keyof ISpecializations, number][] = [
-    ["copywriter", 432323],
-    ["graphicDesigner", 8],
-    ["journalist", 8222],
-    ["editor", 112],
-    ["linguist", 16],
-  ];
+  const arr = Object.entries(answerCounts);
 
   const currentSpecialization = arr.sort((a, b) => a[1] - b[1]).pop();
 
   if (currentSpecialization) {
     const currentSpecializationsKey = currentSpecialization[0];
-    const specialization = specializations[currentSpecializationsKey];
-    console.log(specialization);
+    const specialization = specializations[currentSpecializationsKey as keyof ISpecializations];
     return (
       <>
         <section className={styles["container"]}>
