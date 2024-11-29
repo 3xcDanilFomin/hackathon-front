@@ -3,15 +3,15 @@ import { specializations } from "../../data/specializations";
 import { useAnswerCount } from "../../hooks";
 import { ISpecializations } from "../../types/types";
 import styles from "./ResultPage.module.scss";
-// const tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
 
 export const ResultPage: React.FC = () => {
-  // const mainBtn = tg.MainButton;
-  // mainBtn.setParams({ text: "Завершить тест" });
-  // mainBtn.show();
-  // tg.onEvent("mainButtonClicked", () => {
-  //   tg.close();
-  // });
+  const mainBtn = tg.MainButton;
+  mainBtn.setParams({ text: "Завершить тест" });
+  mainBtn.show();
+  tg.onEvent("mainButtonClicked", () => {
+    tg.close();
+  });
 
   const { answerCounts } = useAnswerCount();
   const arr = Object.entries(answerCounts);
