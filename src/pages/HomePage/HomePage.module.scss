@@ -18,6 +18,12 @@
         font-size: clamp(2rem, -0.107rem + 8.99vw, 4.5rem);
       }
     }
+
+    @media screen and (max-width: 450) {
+      & {
+        font-size: 28px;
+      }
+    }
   }
 
   .subtitle {
@@ -27,6 +33,12 @@
     @media screen and (max-width: 820px) {
       & {
         font-size: clamp(1.125rem, 0.388rem + 3.15vw, 2rem);
+      }
+    }
+
+    @media screen and (max-width: 450) {
+      & {
+        font-size: 22px;
       }
     }
   }

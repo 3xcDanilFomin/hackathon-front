@@ -3,10 +3,16 @@ import { specializations } from "../../data/specializations";
 import { useAnswerCount } from "../../hooks";
 import { ISpecializations } from "../../types/types";
 import styles from "./ResultPage.module.scss";
+const tg = window.Telegram.WebApp;
 
 export const ResultPage: React.FC = () => {
-  const tg = window.Telegram.WebApp;
-  tg.MainButton.show();
+  const mainBtn = tg.MainButton;
+  mainBtn.setParams({ text: "Завершить тест" });
+  mainBtn.show();
+  tg.onEvent("mainButtonClicked", () => {
+    tg.close();
+  });
+
   const { answerCounts } = useAnswerCount();
   const arr = Object.entries(answerCounts);
   const currentSpecialization = arr.sort((a, b) => a[1] - b[1]).pop();
@@ -23,7 +29,7 @@ export const ResultPage: React.FC = () => {
               <h1 className={styles["title"]}>{specialization.label}</h1>
               <img
                 className={styles["img"]}
-                src={`http://localhost:3000/images/${specialization.imgPath}`}
+                src={`http://176.124.218.207:8080/images/${specialization.imgPath}`}
                 alt={`Изображение ${specialization.name}`}
               />
             </div>
