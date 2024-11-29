@@ -25,7 +25,7 @@ export const UniversitiesItem: React.FC<IUniversitiesItem> = (props) => {
           fill="currentColor"
         />
       </svg>
-      <a className={styles["link"]} href={link}>
+      <a className={styles["link"]} href={link} target="_blank">
         {name}
       </a>
     </li>
