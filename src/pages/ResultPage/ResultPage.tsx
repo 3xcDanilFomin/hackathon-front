@@ -29,7 +29,7 @@ export const ResultPage: React.FC = () => {
               <h1 className={styles["title"]}>{specialization.label}</h1>
               <img
                 className={styles["img"]}
-                src={`http://176.124.218.207:8080/images/${specialization.imgPath}`}
+                src={`https://176.124.218.207:8080/images/${specialization.imgPath}`}
                 alt={`Изображение ${specialization.name}`}
               />
             </div>
