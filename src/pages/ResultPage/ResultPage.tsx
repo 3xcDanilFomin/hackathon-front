@@ -20,7 +20,7 @@ export const ResultPage: React.FC = () => {
             <div className={styles["item__left"]}>
               <img
                 className={styles["item__img"]}
-                src={`http://localhost:3000/images/${specialization.imgPath}`}
+                src={`http://176.124.218.207:3000/images/${specialization.imgPath}`}
               />
               <p className={styles["item__text"]}>{specialization.label}</p>
             </div>
@@ -55,6 +55,6 @@ export const ResultPage: React.FC = () => {
       </>
     );
   } else {
-    console.log("No specializations found.");
+    console.log("Нет специализаций.");
   }
 };

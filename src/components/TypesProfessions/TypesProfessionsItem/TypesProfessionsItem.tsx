@@ -17,7 +17,7 @@ export const TypesProfessionsItem: React.FC<ITypesProfessionsItem> = (
         <div className={styles["wrapper"]}>
           <img
             className={styles["img"]}
-            src={`http://localhost:3000/images${imgPath}`}
+            src={`http://176.124.218.207/images${imgPath}`}
             alt={`Изображение ${title}`}
           />
           <p className={styles["text"]}>{title}</p>
