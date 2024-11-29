@@ -17,7 +17,7 @@ export const useQuestions = (path: string | undefined) => {
     : undefined;
 
   const directionQuestions = formattedKey
-    ? test[formattedKey].flatMap((direction) => direction.questions).slice(0, 10)
+    ? test[formattedKey].flatMap((direction) => direction.questions)
     : [];
 
   shuffle(directionQuestions);

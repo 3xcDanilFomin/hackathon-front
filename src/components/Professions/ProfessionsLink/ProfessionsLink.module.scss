@@ -66,6 +66,16 @@
     }
   }
 
+  &:active {
+    .overlay {
+      transform: translateY(0);
+      padding-bottom: 16px;
+    }
+    .wrapper {
+      transform: translateY(0);
+    }
+  }
+
   .title {
     font-size: 14px;
     text-align: center;

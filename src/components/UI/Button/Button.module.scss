@@ -34,12 +34,16 @@ $baby-blue: #f8faff;
   &.outline {
     background-color: transparent;
     color: $button-text-color;
-    box-shadow: 0 0 6px $button-text-color;
+    box-shadow: 0 0 3px $button-text-color;
 
     @media (hover: hover) {
       &:hover {
-        background-color: rgba($color: $fuschia, $alpha: 0.8);
+        background-color: rgba($color: #fafafa17, $alpha: 0.2);
       }
+    }
+
+    &:active {
+      background-color: rgba($color: #fafafa17, $alpha: 0.2);
     }
   }
 

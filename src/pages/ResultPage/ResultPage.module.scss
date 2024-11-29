@@ -45,3 +45,21 @@
     }
   }
 }
+
+.mem-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap-xl;
+
+  .img-mem {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+}

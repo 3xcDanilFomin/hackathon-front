@@ -64,6 +64,14 @@ export const ResultPage: React.FC = () => {
       </>
     );
   } else {
-    console.log("Нет специализаций.");
+    return (
+      <div className={styles["mem-container"]}>
+        <img className={styles["img-mem"]} src="/mem.webp" alt="mem" />
+        <h1 className={styles["title"]}>
+          Ты не ответил ни на один вопрос положительно (:
+        </h1>
+        <h2>Пока</h2>
+      </div>
+    );
   }
 };
