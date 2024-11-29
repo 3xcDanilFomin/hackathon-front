@@ -19,6 +19,19 @@ $white: color.mix($dark, white, 20%);
   padding: 24px 48px;
   border-radius: $radius-md;
 
+  @media screen and (max-width: 840px) {
+    & {
+      width: 100%;
+      padding-inline: 24px;
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    & {
+      padding-inline: 12px;
+    }
+  }
+
   .list {
     display: flex;
     flex-direction: column;
@@ -49,6 +62,19 @@ $white: color.mix($dark, white, 20%);
           width: 100%;
           padding: 12px 24px 12px 32px;
           transition: opacity $animation;
+
+          @media screen and (max-width: 840px) {
+            & {
+              font-size: 16px;
+              padding-left: 48px;
+            }
+          }
+
+          @media screen and (max-width: 540px) {
+            & {
+              font-size: 14px;
+            }
+          }
 
           &:before,
           &:after {

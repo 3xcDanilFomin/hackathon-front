@@ -24,10 +24,17 @@
     width: 20px;
     height: 20px;
     transition: transform $animation;
+    flex-shrink: 0;
   }
 
   .link {
     font-size: 18px;
     color: inherit;
+
+    @media screen and (max-width: 560px) {
+      & {
+        font-size: 14px;
+      }
+    }
   }
 }

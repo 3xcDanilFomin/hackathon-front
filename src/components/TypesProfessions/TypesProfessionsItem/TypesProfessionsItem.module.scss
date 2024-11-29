@@ -1,6 +1,11 @@
 @use "../../../styles/utils/variables.scss" as *;
 
+.item{
+  width: 100%;
+}
+
 .wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,19 +17,6 @@
     height: 320px;
     object-fit: cover;
     object-position: center;
-
-    @media screen and (max-width: 1040px) {
-      & {
-        height: 280px;
-      }
-    }
-
-    @media screen and (max-width: 768px) {
-      & {
-        width: clamp(16.25rem, 9.094rem + 30.53vw, 23.75rem);
-        height: auto;
-      }
-    }
   }
 
   .text {
@@ -41,6 +33,12 @@
     @media screen and (max-width: 768px) {
       & {
         font-size: clamp(0.875rem, 0.636rem + 1.02vw, 1.125rem);
+      }
+    }
+
+    @media screen and (max-width: 540px) {
+      & {
+        font-size: 18px;
       }
     }
   }

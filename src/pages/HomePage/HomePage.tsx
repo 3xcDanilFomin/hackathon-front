@@ -8,7 +8,7 @@ export const HomePage: React.FC = () => {
     <section className={styles["section"]}>
       <h1 className={styles["title"]}>Добро пожаловать!</h1>
       <p className={styles["subtitle"]}>
-        Пройдите тест, чтобы узнать к чему
+        Пройдите тест,<br className={styles["transfer"]} /> чтобы узнать к чему
         <br /> у вас есть предрасположенность
       </p>
       <Link to="/professions">
