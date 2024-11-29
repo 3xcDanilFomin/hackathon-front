@@ -6,7 +6,7 @@ import { AnswerCountProvider } from "../../context/AnswerCountContext";
 export const Provider: React.FC = () => {
   return (
     <AnswerCountProvider>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </AnswerCountProvider>
   );
 };

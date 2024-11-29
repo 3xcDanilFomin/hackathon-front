@@ -1,0 +1,29 @@
+@use "../../../styles/utils/variables.scss" as *;
+
+.departament {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-md;
+
+  .title {
+    position: relative;
+    font-size: 20px;
+    padding-left: 32px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 2px;
+      background-color: #fff;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-sm;
+  }
+}

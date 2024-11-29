@@ -17,11 +17,11 @@ export const CareerOptionsPage: React.FC = () => {
 
   return (
     <>
-      <Header
-        counter={questionState.numberCurrentQuestion}
-        total={totalNumberQuestions}
-      />
       <section className={style["container"]}>
+        <Header
+          counter={questionState.numberCurrentQuestion}
+          total={totalNumberQuestions}
+        />
         <Subtitle>Выберите вариант, который для вас ближе</Subtitle>
         <TestForm
           questions={questionState.displayedQuestions}

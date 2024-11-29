@@ -14,7 +14,7 @@ export const ProfessionsLink: React.FC<IProfessionsLink> = (props) => {
   return (
     <Link to={`/career/${urlPath}`} className={styles["card"]}>
       <img
-        src={`http://176.124.218.207:3000/images${imgPath}`}
+        src={`http://localhost:3000/images${imgPath}`}
         className={styles["img"]}
         alt={`Изображение ${title}`}
       />

@@ -1,0 +1,33 @@
+@use "../../../styles/utils/variables.scss" as *;
+
+.item {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: $gap-sm;
+  padding-block: 6px;
+  color: #d2eaff;
+  line-height: 1.25;
+  transition: color $animation;
+
+  @media (hover: hover) {
+    &:hover {
+      color: #a5d5fe;
+
+      .icon{
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    transition: transform $animation;
+  }
+
+  .link {
+    font-size: 18px;
+    color: inherit;
+  }
+}

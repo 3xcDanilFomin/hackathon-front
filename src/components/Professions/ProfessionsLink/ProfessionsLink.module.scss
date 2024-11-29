@@ -24,7 +24,7 @@
     right: 0;
     z-index: 1;
     border-radius: $radius-lg $radius-lg 0 0;
-    background-color: $card-bg;
+    background-color: #0869d7;
     transform: translateY(100%);
     transition: transform $animation, padding $animation;
 
@@ -36,7 +36,7 @@
       justify-content: center;
       padding-block: 16px;
       border-radius: $radius-lg 0 0 0;
-      background-color: $card-bg;
+      background-color: #0869d7;
       transform: translateY(-100%);
       transition: transform $animation;
 
@@ -49,7 +49,7 @@
         z-index: 1;
         background-color: transparent;
         border-radius: 0 0 50% 0;
-        box-shadow: 7px 7px 0 7px $card-bg;
+        box-shadow: 7px 7px 0 7px #0869d7;
       }
     }
   }

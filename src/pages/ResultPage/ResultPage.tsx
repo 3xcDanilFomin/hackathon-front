@@ -1,57 +1,60 @@
-import { Footer } from "../../components";
+import { UniversitiesList } from "../../components";
 import { specializations } from "../../data/specializations";
 import { useAnswerCount } from "../../hooks";
 import { ISpecializations } from "../../types/types";
 import styles from "./ResultPage.module.scss";
 
 export const ResultPage: React.FC = () => {
+  const tg = window.Telegram.WebApp;
+  tg.MainButton.show();
   const { answerCounts } = useAnswerCount();
   const arr = Object.entries(answerCounts);
-
   const currentSpecialization = arr.sort((a, b) => a[1] - b[1]).pop();
 
   if (currentSpecialization) {
     const currentSpecializationsKey = currentSpecialization[0];
-    const specialization = specializations[currentSpecializationsKey as keyof ISpecializations];
+    const specialization =
+      specializations[currentSpecializationsKey as keyof ISpecializations];
     return (
       <>
         <section className={styles["container"]}>
-          <article className={styles["item"]}>
-            <div className={styles["item__left"]}>
+          <div className={styles["top"]}>
+            <div className={styles["wrapper"]}>
+              <h1 className={styles["title"]}>{specialization.label}</h1>
               <img
-                className={styles["item__img"]}
-                src={`http://176.124.218.207:3000/images/${specialization.imgPath}`}
+                className={styles["img"]}
+                src={`http://localhost:3000/images/${specialization.imgPath}`}
+                alt={`Изображение ${specialization.name}`}
               />
-              <p className={styles["item__text"]}>{specialization.label}</p>
             </div>
-            <div className={styles["item__right"]}>
-              <p className={styles["item__description"]}>
+            <div className={styles["wrapper-r"]}>
+              <p
+                className={styles["description"]}
+                style={{ textAlign: "center", fontSize: "22px" }}
+              >
+                Поздравляем! Вы завершили профориентационный тест!
+              </p>
+              <p className={styles["description"]}>
+                Спасибо, что уделили время для прохождения нашего теста. Мы
+                надеемся, что этот опыт помог вам лучше понять свои сильные
+                стороны и интересы.
+              </p>
+              <p className={styles["description"]}>
+                На основе ваших ответов, мы рекомендуем обратить внимание на
+                следующую профессию:
+              </p>
+              <p className={styles["description"]}>
                 {specialization.description}
               </p>
+              <p className={styles["description"]}>
+                Не забывайте, что выбор профессии – это важный шаг. Исследуйте
+                возможности, которые открываются перед вами, и не бойтесь
+                мечтать! Удачи в вашем карьерном пути!
+              </p>
             </div>
-          </article>
-
-          <ul className={styles["department__list"]}>
-            {specialization.universities.map((university) => (
-              <li className={styles["department__item"]} key={university.id}>
-                <article className={styles["department__wrapper"]}>
-                  <div className={styles["department__img"]} />
-                  <h2 className={styles["department__title"]}>
-                    {university.name}
-                  </h2>
-                </article>
-                <a
-                  className={styles["department__link"]}
-                  href={university.link}
-                  target="_blank"
-                >
-                  {university.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          </div>
+          <UniversitiesList universities={specialization.universities} />
         </section>
-        <Footer />
       </>
     );
   } else {

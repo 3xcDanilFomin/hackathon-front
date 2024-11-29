@@ -11,8 +11,16 @@ export const QuestionProgress: React.FC<IQuestionProgressProps> = ({
 }) => {
   return (
     <p className={styles["progress"]}>
-      <span className={styles["current"]}>{counter}</span>/
-      <span className={styles["total"]}>{total}</span>
+      <span
+        className={
+          counter === total
+            ? [styles["current"], styles["current-active"]].join(" ")
+            : styles["current"]
+        }
+      >
+        {counter}
+      </span>
+      /<span className={styles["total"]}>{total}</span>
     </p>
   );
 };

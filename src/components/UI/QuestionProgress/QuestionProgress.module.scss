@@ -5,5 +5,9 @@
 
   .current {
     color: rgba($color: $text-color, $alpha: 0.7);
+
+    &-active {
+      color: $text-color;
+    }
   }
 }

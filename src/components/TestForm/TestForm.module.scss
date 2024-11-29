@@ -1,5 +1,5 @@
 @use "../../styles/utils/variables.scss" as *;
-@use 'sass:color';
+@use "sass:color";
 
 $border-color: #fff;
 $checkbox-size: 18px;
@@ -13,7 +13,9 @@ $white: color.mix($dark, white, 20%);
   display: flex;
   flex-direction: column;
   gap: $gap-lg;
-  background-color: $card-bg;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(43, 43, 43, 0.3);
   padding: 24px 48px;
   border-radius: $radius-md;
 
@@ -23,14 +25,15 @@ $white: color.mix($dark, white, 20%);
     gap: $gap-sm;
 
     .item {
-      cursor: pointer;
       border-radius: $radius-md;
       overflow: hidden;
 
       & > label {
+        width: fit-content;
         display: flex;
         align-items: center;
         gap: $gap-md;
+        cursor: pointer;
 
         @media (hover: hover) {
           &:hover {

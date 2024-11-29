@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { test } from "../data/test";
 import { IQuestion, ITest } from "../types/types";
-import { useNavigate } from "react-router-dom";
 import { shuffle } from "../helpers";
 
 export const useQuestions = (path: string | undefined) => {
@@ -16,7 +17,7 @@ export const useQuestions = (path: string | undefined) => {
     : undefined;
 
   const directionQuestions = formattedKey
-    ? test[formattedKey].flatMap((direction) => direction.questions)
+    ? test[formattedKey].flatMap((direction) => direction.questions).slice(0, 10)
     : [];
 
   shuffle(directionQuestions);
