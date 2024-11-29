@@ -1,4 +1,4 @@
-import { IQuestion } from "../../../data/questions";
+import { IQuestion } from "../../../types/types";
 import { QuestionsItem } from "../QuestionsItem/QuestionsItem";
 import styles from "./QuestionsList.module.scss";
 
@@ -14,8 +14,7 @@ export const QuestionsList: React.FC<IQuestionsListProps> = (props) => {
       {currentQuestions.map((question) => (
         <QuestionsItem
           key={question.id}
-          imgPath={question.imgPath}
-          question={question.question}
+          question={question.text}
           onClick={handleQuestionClick}
         />
       ))}

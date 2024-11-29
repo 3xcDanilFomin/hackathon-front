@@ -28,9 +28,9 @@
   }
 
   .text {
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
-    text-wrap: nowrap;
+    padding-inline: 12px;
 
     @media screen and (max-width: 1040px) {
       & {
@@ -40,7 +40,6 @@
 
     @media screen and (max-width: 768px) {
       & {
-        text-wrap: wrap;
         font-size: clamp(0.875rem, 0.636rem + 1.02vw, 1.125rem);
       }
     }
@@ -48,13 +47,13 @@
 }
 
 .description {
-  font-size: 18px;
-  text-align: justify;
+  text-align: center;
   color: rgba($color: $text-color, $alpha: 0.75);
+  padding: 0 24px 24px 24px;
 
   @media screen and (max-width: 1040px) {
     & {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }

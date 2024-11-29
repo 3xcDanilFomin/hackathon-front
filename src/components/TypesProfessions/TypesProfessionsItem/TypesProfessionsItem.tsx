@@ -7,7 +7,9 @@ interface ITypesProfessionsItem {
   description: string;
 }
 
-export const TypesProfessionsItem: React.FC<ITypesProfessionsItem> = (props) => {
+export const TypesProfessionsItem: React.FC<ITypesProfessionsItem> = (
+  props
+) => {
   const { description, title, imgPath } = props;
   return (
     <li className={styles["item"]}>
@@ -15,7 +17,7 @@ export const TypesProfessionsItem: React.FC<ITypesProfessionsItem> = (props) => 
         <div className={styles["wrapper"]}>
           <img
             className={styles["img"]}
-            src={imgPath}
+            src={`http://localhost:3000/images${imgPath}`}
             alt={`Изображение ${title}`}
           />
           <p className={styles["text"]}>{title}</p>

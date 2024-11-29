@@ -1,26 +1,22 @@
 @use "../../../styles/utils/variables.scss" as *;
 
 .card {
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+
   gap: $gap-md;
-  padding: 32px;
   border-radius: $radius-lg;
   background-color: $card-bg;
+  overflow: hidden;
   box-shadow: 0 0 12px rgba($color: $card-bg, $alpha: 0.8);
 
-  @media screen and (max-width: 820px) {
-    & {
-      padding: 16px;
-    }
+  &.row {
+    flex-direction: row;
+    justify-content: center;
   }
 
-  &.row{
-    flex-direction: row;
-  }
-  
-  &.column{
+  &.column {
     flex-direction: column;
   }
 }

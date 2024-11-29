@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./ProfessionsLink.module.scss";
-import { Button } from "../UI";
+import { Button } from "../../UI";
 
 interface IProfessionsLink {
   title: string;
@@ -12,9 +12,9 @@ export const ProfessionsLink: React.FC<IProfessionsLink> = (props) => {
   const { imgPath, title, urlPath } = props;
 
   return (
-    <Link to={urlPath} className={styles["card"]}>
+    <Link to={`/career/${urlPath}`} className={styles["card"]}>
       <img
-        src={imgPath}
+        src={`http://localhost:3000/images${imgPath}`}
         className={styles["img"]}
         alt={`Изображение ${title}`}
       />

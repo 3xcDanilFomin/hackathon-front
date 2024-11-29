@@ -1,22 +1,31 @@
-import { Header, QuestionsList } from "../../components";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+import { Header, TestForm } from "../../components";
 import { Subtitle } from "../../components/UI";
-import { questions } from "../../data/questions";
 import { useQuestions } from "../../hooks";
 import style from "./CareerOptionsPage.module.scss";
 
 export const CareerOptionsPage: React.FC = () => {
-  const { displayedQuestions, questionIndex, handleQuestionClick } =
-    useQuestions(questions);
+  const { name } = useParams<{ name: string }>();
+  const { questionState, totalNumberQuestions, handleQuestionSubmission } =
+    useQuestions(name);
 
-  console.log({ displayedQuestions, questionIndex });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <Header counter={questionIndex} total={questions.length / 2} />
+      <Header
+        counter={questionState.numberCurrentQuestion}
+        total={totalNumberQuestions}
+      />
       <section className={style["container"]}>
         <Subtitle>Выберите вариант, который для вас ближе</Subtitle>
-        <QuestionsList
-          currentQuestions={displayedQuestions.questionsToDisplay}
-          handleQuestionClick={handleQuestionClick}
+        <TestForm
+          questions={questionState.displayedQuestions}
+          onClickQuestion={handleQuestionSubmission}
         />
       </section>
     </>

@@ -1,0 +1,90 @@
+@use "../../styles/utils/variables.scss" as *;
+@use 'sass:color';
+
+$border-color: #fff;
+$checkbox-size: 18px;
+$checkedbox-size: 18px;
+
+$dark: #15171e;
+$white: color.mix($dark, white, 20%);
+
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-lg;
+  background-color: $card-bg;
+  padding: 24px 48px;
+  border-radius: $radius-md;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-sm;
+
+    .item {
+      cursor: pointer;
+      border-radius: $radius-md;
+      overflow: hidden;
+
+      & > label {
+        display: flex;
+        align-items: center;
+        gap: $gap-md;
+
+        @media (hover: hover) {
+          &:hover {
+            & > span {
+              opacity: 0.8;
+            }
+          }
+        }
+
+        & > span {
+          font-size: 20px;
+          position: relative;
+          width: 100%;
+          padding: 12px 24px 12px 32px;
+          transition: opacity $animation;
+
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 6px;
+            top: 50%;
+            width: $checkbox-size;
+            height: $checkbox-size;
+            background: transparent;
+            border: 2px solid $border-color;
+            border-radius: 4px;
+            transition: transform $animation;
+          }
+
+          &::before {
+            transform: translateY(-50%);
+          }
+
+          &:after {
+            z-index: 0;
+            border: none;
+          }
+        }
+
+        & > .checkbox {
+          display: none;
+
+          &:checked {
+            & ~ span {
+              &:before {
+                background: $border-color;
+                transform: rotateZ(180deg) translateY(50%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

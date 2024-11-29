@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
         element: <TypesProfessionsPage />,
       },
       {
-        path: "/career",
+        path: "/career/:name",
         element: <CareerOptionsPage />,
       },
       {
